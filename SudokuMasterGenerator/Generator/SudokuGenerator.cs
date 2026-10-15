@@ -41,14 +41,14 @@ public class SudokuGenerator
         var personCount = Math.Min(columns.Count, rows.Count);
         for (var i = 0; i < personCount; i++)
         {
-            var personName = Letters[i].ToString().ToUpper();
+            var personName = char.ToUpper(Letters[i]);
             var personX = columns[_random.Next(0, columns.Count)];
             var personY = rows[_random.Next(0, rows.Count)];
 
             columns.Remove(personX);
             rows.Remove(personY);
 
-            result[personX, personY] = new Person(personName);
+            result[personX, personY] = new Person(personName, Letters[i].ToString());
         }
 
         return result;

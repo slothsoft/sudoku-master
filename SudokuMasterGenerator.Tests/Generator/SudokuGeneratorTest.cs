@@ -20,7 +20,8 @@ public class SudokuGeneratorTest
             
             var singlePerson = sudoku.Persons[0, 0];
             Assert.That(singlePerson, Is.Not.Null);
-            Assert.That(singlePerson.Name, Is.EqualTo("A"));
+            Assert.That(singlePerson.Id, Is.EqualTo('A'));
+            Assert.That(singlePerson.DisplayName, Is.EqualTo("a"));
         }
     }
     
@@ -44,7 +45,8 @@ public class SudokuGeneratorTest
             
             var person = personOrNull ?? nullOrPerson;
             Assert.That(person, Is.Not.Null);
-            Assert.That(person.Name, Is.EqualTo("A"));
+            Assert.That(person.Id, Is.EqualTo('A'));
+            Assert.That(person.DisplayName, Is.EqualTo("a"));
         }
     }
     
@@ -68,7 +70,8 @@ public class SudokuGeneratorTest
             
             var person = personOrNull ?? nullOrPerson;
             Assert.That(person, Is.Not.Null);
-            Assert.That(person.Name, Is.EqualTo("A"));
+            Assert.That(person.Id, Is.EqualTo('A'));
+            Assert.That(person.DisplayName, Is.EqualTo("a"));
         }
     }
 }

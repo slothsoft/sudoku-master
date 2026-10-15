@@ -21,7 +21,7 @@ public record Sudoku
     
     public override string ToString()
     {
-        return Persons.Stringify(p => p?.Name);
+        return Persons.Stringify(p => p?.Id.ToString());
     }
 }
 

@@ -1,3 +1,3 @@
 ﻿namespace SudokuMasterBase;
 
-public record Room(string Name);
+public record Room(char Id, string DisplayName) : IGridElement;
