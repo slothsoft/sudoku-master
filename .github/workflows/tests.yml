@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: read
+  checks: write
 
 jobs:
   test:
@@ -44,3 +45,13 @@ jobs:
           name: test-results
           path: TestResults/
           if-no-files-found: ignore
+
+      - name: 🖥️ Display Test Results
+        if: ${{ !cancelled() }}
+        uses: dorny/test-reporter@v3
+        with:
+          name: NUnit-Tests
+          path: TestResults/**/*.trx
+          reporter: dotnet-trx
+          use-actions-summary: 'true'
+          list-tests: all
